@@ -102,7 +102,7 @@ spec:
   app: nginx-app
  type: NodePort
  ports:
- - nodePort: 31000
+ - nodePort: 31000 # This port is the nodeport
    port: 80
    targetPort: 80
 ```
@@ -123,7 +123,7 @@ kubectl describe svc nginx-service
 
 
 ### Get the Node IP
-The Node IP will be the IP of each worker.
+The Node IP will be the IP of each worker. To access the application the address will be <Node_IP>:31000
 
 ## Step4: Configure Nginx LB
 In the 4th EC2 instance first update and upgrade and then install nginx.
