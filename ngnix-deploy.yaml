@@ -1,0 +1,23 @@
+# Deployment
+# controllers/nginx-deploy.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: nginx-deployment
+ labels:
+  app: nginx-app
+spec:
+  replicas: 1 # Only one pod will be created
+  selector:
+   matchLabels:
+    app: nginx-app
+  template:
+   metadata:
+    labels:
+     app: nginx-app
+   spec:
+    containers:
+    - name: nginx-container
+      image: nginx:1.7.9
+      ports:
+      - containerPort: 80
