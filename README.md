@@ -148,6 +148,7 @@ We need to add below lines in nginx.conf file. We will use upstream directive fo
         }
     }
 ```
+Copy this file in nginx conf folder and restart nginx.
 
 ## Cleanup NodePort
 Below Command will delete the service. Here service name is nginx-service.
